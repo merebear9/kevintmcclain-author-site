@@ -1,4 +1,5 @@
 import FadeIn from "./FadeIn";
+import SectionDivider from "./SectionDivider";
 
 export default function AboutSeries() {
   return (
@@ -10,8 +11,8 @@ export default function AboutSeries() {
 
       <div className="relative mx-auto max-w-3xl px-6 text-center">
         <FadeIn>
-          <p className="mb-4 text-xs uppercase tracking-[0.5em] text-gold">
-            About the Series
+          <p className="mb-4 font-deco text-xs tracking-[0.5em] text-gold">
+            ABOUT THE SERIES
           </p>
         </FadeIn>
 
@@ -22,7 +23,7 @@ export default function AboutSeries() {
         </FadeIn>
 
         <FadeIn delay={240}>
-          <div className="mx-auto my-10 h-px w-16 bg-gradient-to-r from-transparent via-gold to-transparent" />
+          <SectionDivider className="my-10" />
         </FadeIn>
 
         <FadeIn delay={320}>

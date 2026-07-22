@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import MoonMark from "./MoonMark";
 
 const LINKS = [
   { href: "#series", label: "The Series" },
@@ -32,10 +33,11 @@ export default function Nav() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6">
         <a
           href="#top"
-          className={`font-serif-display text-lg tracking-wide text-gold-bright transition-opacity duration-500 ${
+          className={`flex items-center gap-2 font-serif-display text-lg tracking-wide text-gold-bright transition-opacity duration-500 ${
             scrolled ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
+          <MoonMark className="h-4 w-4 text-gold" />
           Kevin T. McClain
         </a>
 

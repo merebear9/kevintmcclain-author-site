@@ -1,4 +1,5 @@
 import FadeIn from "./FadeIn";
+import SectionDivider from "./SectionDivider";
 
 type Quote = {
   quote: string;
@@ -26,21 +27,22 @@ const QUOTES: Quote[] = [
 
 export default function Praise() {
   return (
-    <section id="praise" className="relative bg-midnight-deep py-28 sm:py-36">
+    <section id="praise" className="relative bg-midnight-teal py-28 sm:py-36">
       <div className="mx-auto max-w-6xl px-6">
         <FadeIn className="text-center">
-          <p className="mb-4 text-xs uppercase tracking-[0.5em] text-gold">
-            Praise for the Series
+          <p className="mb-4 font-deco text-xs tracking-[0.5em] text-gold">
+            PRAISE FOR THE SERIES
           </p>
           <h2 className="font-serif-display text-4xl font-semibold text-[#f6efe0] sm:text-5xl">
             What Readers Are Saying
           </h2>
+          <SectionDivider className="mt-10" />
         </FadeIn>
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {QUOTES.map((q, i) => (
             <FadeIn key={q.source} delay={i * 150}>
-              <figure className="flex h-full flex-col border border-gold/10 bg-midnight-panel/50 p-8">
+              <figure className="deco-frame flex h-full flex-col bg-midnight-deep/60 p-8">
                 <span className="font-serif-display text-5xl leading-none text-gold/40">
                   &ldquo;
                 </span>

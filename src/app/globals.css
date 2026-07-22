@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #060b14;
+  --background: #04061a;
   --foreground: #f2ece1;
   --midnight: #0a1220;
-  --midnight-deep: #050810;
+  --midnight-deep: #030510;
   --midnight-panel: #0e1a2b;
+  --midnight-teal: #223641;
   --gold: #c9a86a;
   --gold-bright: #e8cd8f;
+  --bronze: #9c7a3f;
   --mist: #7d93a8;
 }
 
@@ -17,10 +19,13 @@
   --color-midnight: var(--midnight);
   --color-midnight-deep: var(--midnight-deep);
   --color-midnight-panel: var(--midnight-panel);
+  --color-midnight-teal: var(--midnight-teal);
   --color-gold: var(--gold);
   --color-gold-bright: var(--gold-bright);
+  --color-bronze: var(--bronze);
   --color-mist: var(--mist);
   --font-serif: var(--font-playfair);
+  --font-deco: var(--font-cinzel);
   --font-sans: var(--font-sans-body);
 }
 
@@ -102,4 +107,41 @@ section {
 
 .font-serif-display {
   font-family: var(--font-playfair), Georgia, serif;
+}
+
+.font-deco {
+  font-family: var(--font-cinzel), Georgia, serif;
+}
+
+/* Art-deco corner bracket frame, echoing the book covers' ornamental border.
+   Corners sit inset (not straddling the edge) so this stays intact even
+   inside overflow-hidden containers. */
+.deco-frame {
+  position: relative;
+  border: 1px solid rgba(201, 168, 106, 0.35);
+}
+
+.deco-frame::before,
+.deco-frame::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--gold);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.deco-frame::before {
+  top: 7px;
+  left: 7px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.deco-frame::after {
+  bottom: 7px;
+  right: 7px;
+  border-left: none;
+  border-top: none;
 }

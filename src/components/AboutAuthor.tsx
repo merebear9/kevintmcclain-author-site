@@ -1,4 +1,5 @@
 import FadeIn from "./FadeIn";
+import MoonMark from "./MoonMark";
 
 export default function AboutAuthor() {
   return (
@@ -9,7 +10,7 @@ export default function AboutAuthor() {
             Placeholder author photo. Replace this block with a real
             <Image src="/author-photo.jpg" .../> once a portrait is available.
           */}
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm border border-gold/20 bg-[linear-gradient(160deg,#132238_0%,#0a1220_60%,#050810_100%)]">
+          <div className="deco-frame relative aspect-[4/5] w-full overflow-hidden bg-[linear-gradient(160deg,#132a33_0%,#0a1220_60%,#030510_100%)]">
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
               <svg
                 width="40"
@@ -33,8 +34,8 @@ export default function AboutAuthor() {
 
         <div>
           <FadeIn delay={120}>
-            <p className="mb-4 text-xs uppercase tracking-[0.5em] text-gold">
-              About the Author
+            <p className="mb-4 font-deco text-xs tracking-[0.5em] text-gold">
+              ABOUT THE AUTHOR
             </p>
             <h2 className="font-serif-display text-4xl font-semibold text-[#f6efe0] sm:text-5xl">
               Kevin T. McClain
@@ -42,7 +43,10 @@ export default function AboutAuthor() {
           </FadeIn>
 
           <FadeIn delay={260}>
-            <div className="mt-8 h-px w-16 bg-gradient-to-r from-transparent via-gold to-transparent" />
+            <div className="mt-8 flex items-center gap-4">
+              <MoonMark className="h-4 w-4 text-gold" />
+              <span className="h-px w-16 bg-gradient-to-r from-gold/70 to-transparent" />
+            </div>
           </FadeIn>
 
           <FadeIn delay={340}>

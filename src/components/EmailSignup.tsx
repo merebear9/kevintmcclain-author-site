@@ -1,4 +1,5 @@
 import FadeIn from "./FadeIn";
+import SectionDivider from "./SectionDivider";
 
 // Mailchimp embedded-form integration:
 // 1. In Mailchimp, go to Audience > Signup forms > Embedded forms.
@@ -20,12 +21,13 @@ export default function EmailSignup() {
 
       <div className="relative mx-auto max-w-2xl px-6 text-center">
         <FadeIn>
-          <p className="mb-4 text-xs uppercase tracking-[0.5em] text-gold">
-            Join the Inner Circle
+          <p className="mb-4 font-deco text-xs tracking-[0.5em] text-gold">
+            JOIN THE INNER CIRCLE
           </p>
           <h2 className="font-serif-display text-4xl font-semibold text-[#f6efe0] sm:text-5xl">
             Join the River Witches Inner Circle
           </h2>
+          <SectionDivider className="mt-10" />
         </FadeIn>
 
         <FadeIn delay={150}>

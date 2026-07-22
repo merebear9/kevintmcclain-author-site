@@ -1,3 +1,6 @@
+import MoonMark from "./MoonMark";
+import WaveSwirls from "./WaveSwirls";
+
 const SOCIAL_LINKS = [
   {
     label: "Instagram",
@@ -29,9 +32,11 @@ const LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-gold/10 bg-midnight-deep py-16">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 text-center">
-        <p className="font-serif-display text-2xl text-gold-bright">
+    <footer className="relative overflow-hidden border-t border-gold/10 bg-midnight-deep py-16">
+      <WaveSwirls className="pointer-events-none absolute -top-6 left-0 h-16 w-full text-gold opacity-[0.1]" />
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 text-center">
+        <p className="flex items-center gap-2 font-serif-display text-2xl text-gold-bright">
+          <MoonMark className="h-5 w-5 text-gold" />
           Kevin T. McClain
         </p>
 
