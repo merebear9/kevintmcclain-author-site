@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  --background: #060b14;
+  --foreground: #f2ece1;
+  --midnight: #0a1220;
+  --midnight-deep: #050810;
+  --midnight-panel: #0e1a2b;
+  --gold: #c9a86a;
+  --gold-bright: #e8cd8f;
+  --mist: #7d93a8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-midnight: var(--midnight);
+  --color-midnight-deep: var(--midnight-deep);
+  --color-midnight-panel: var(--midnight-panel);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-mist: var(--mist);
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-sans-body);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans-body), Arial, Helvetica, sans-serif;
+}
+
+section {
+  scroll-margin-top: 5rem;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--midnight-deep);
+}
+
+/* Fade-in-on-scroll utility, driven by IntersectionObserver toggling data-visible */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Drifting mist layer used behind the hero */
+@keyframes driftMist {
+  0% {
+    transform: translate3d(-6%, 0, 0) scale(1.1);
+  }
+  50% {
+    transform: translate3d(4%, -2%, 0) scale(1.15);
+  }
+  100% {
+    transform: translate3d(-6%, 0, 0) scale(1.1);
+  }
+}
+
+.mist-layer {
+  animation: driftMist 40s ease-in-out infinite;
+}
+
+.mist-layer-slow {
+  animation: driftMist 65s ease-in-out infinite reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mist-layer,
+  .mist-layer-slow {
+    animation: none;
+  }
+}
+
+/* Subtle gold text glow for headings */
+.gold-glow {
+  text-shadow: 0 0 30px rgba(201, 168, 106, 0.25);
+}
+
+.font-serif-display {
+  font-family: var(--font-playfair), Georgia, serif;
+}
