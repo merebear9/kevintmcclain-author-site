@@ -50,7 +50,8 @@ export default function AboutAuthor() {
                 the international settings of the trilogy, he brings legal
                 and investigative authenticity to the thriller elements of
                 the series. He lives near Quincy, Illinois &mdash; the
-                real-life setting of the books &mdash; with his wife Linda.
+                real-life setting of the books &mdash; with his wife Linda
+                and their two dogs, Gracie and Cleo.
               </p>
             </div>
           </FadeIn>
