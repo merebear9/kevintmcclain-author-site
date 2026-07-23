@@ -28,6 +28,7 @@ const SOCIAL_LINKS = [
 const LINKS = [
   { label: "Amazon Author Page", href: "https://www.amazon.com/author/kevintmcclain" },
   { label: "Goodreads", href: "https://www.goodreads.com/" },
+  { label: "Media Kit", href: "/press/kevin-t-mcclain-media-kit.pdf" },
 ];
 
 export default function Footer() {
