@@ -1,5 +1,6 @@
 import FadeIn from "./FadeIn";
 import MoonMark from "./MoonMark";
+import Parallax from "./Parallax";
 import SeriesBadge from "./SeriesBadge";
 import WaveSwirls from "./WaveSwirls";
 
@@ -20,26 +21,36 @@ export default function Hero() {
       */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_20%,#132a33_0%,#0a1220_45%,#030510_100%)]" />
-        <svg
-          className="mist-layer absolute -left-1/4 top-1/3 h-[70%] w-[150%] opacity-[0.14]"
-          viewBox="0 0 800 300"
-          preserveAspectRatio="none"
-          aria-hidden
-        >
-          <ellipse cx="400" cy="150" rx="380" ry="90" fill="#7d93a8" />
-        </svg>
-        <svg
-          className="mist-layer-slow absolute -left-1/3 top-1/2 h-[60%] w-[160%] opacity-[0.1]"
-          viewBox="0 0 800 300"
-          preserveAspectRatio="none"
-          aria-hidden
-        >
-          <ellipse cx="400" cy="150" rx="380" ry="70" fill="#c9a86a" />
-        </svg>
 
-        <MoonMark className="absolute left-1/2 top-[8%] h-24 w-24 -translate-x-1/2 text-gold opacity-[0.16] sm:h-36 sm:w-36" />
+        <Parallax speed={0.08} className="absolute -left-1/4 top-1/3 h-[70%] w-[150%]">
+          <svg
+            className="mist-layer h-full w-full opacity-[0.14]"
+            viewBox="0 0 800 300"
+            preserveAspectRatio="none"
+            aria-hidden
+          >
+            <ellipse cx="400" cy="150" rx="380" ry="90" fill="#7d93a8" />
+          </svg>
+        </Parallax>
 
-        <WaveSwirls className="absolute bottom-0 left-0 h-24 w-full text-gold opacity-[0.12] sm:h-32" />
+        <Parallax speed={0.05} className="absolute -left-1/3 top-1/2 h-[60%] w-[160%]">
+          <svg
+            className="mist-layer-slow h-full w-full opacity-[0.1]"
+            viewBox="0 0 800 300"
+            preserveAspectRatio="none"
+            aria-hidden
+          >
+            <ellipse cx="400" cy="150" rx="380" ry="70" fill="#c9a86a" />
+          </svg>
+        </Parallax>
+
+        <Parallax speed={0.18} baseX="-50%" className="absolute left-1/2 top-[8%]">
+          <MoonMark className="h-24 w-24 text-gold opacity-[0.16] sm:h-36 sm:w-36" />
+        </Parallax>
+
+        <Parallax speed={-0.06} className="absolute bottom-0 left-0 w-full">
+          <WaveSwirls className="h-24 w-full text-gold opacity-[0.12] sm:h-32" />
+        </Parallax>
 
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,5,16,0.15)_0%,rgba(3,5,16,0.05)_40%,rgba(3,5,16,0.9)_100%)]" />
       </div>

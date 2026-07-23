@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Cinzel, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -69,9 +69,65 @@ export const metadata: Metadata = {
     description,
     images: ["/opengraph-image"],
   },
+  alternates: {
+    canonical: siteUrl,
+  },
   icons: {
     icon: "/favicon.ico",
+    apple: "/icons/apple-touch-icon.png",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#04061a",
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#author`,
+      name: "Kevin T. McClain",
+      url: siteUrl,
+      jobTitle: "Author",
+      description,
+      sameAs: [
+        "https://www.amazon.com/author/kevintmcclain",
+        "https://www.goodreads.com/",
+      ],
+    },
+    {
+      "@type": "Book",
+      name: "Mississippi Magic",
+      author: { "@id": `${siteUrl}/#author` },
+      isPartOf: {
+        "@type": "BookSeries",
+        name: "The River Witches",
+      },
+      bookFormat: "https://schema.org/Paperback",
+      url: "https://www.amazon.com/dp/B09S87M5Y9",
+      genre: ["Paranormal Thriller", "Historical Fantasy"],
+    },
+    {
+      "@type": "Book",
+      name: "Operation Seahorse",
+      author: { "@id": `${siteUrl}/#author` },
+      isPartOf: {
+        "@type": "BookSeries",
+        name: "The River Witches",
+      },
+      bookFormat: "https://schema.org/Paperback",
+      url: "https://www.amazon.com/dp/B0B7F9TGCT",
+      genre: ["Paranormal Thriller", "Historical Fantasy"],
+    },
+    {
+      "@type": "WebSite",
+      url: siteUrl,
+      name: "Kevin T. McClain",
+      publisher: { "@id": `${siteUrl}/#author` },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -85,6 +141,16 @@ export default function RootLayout({
       className={`${playfair.variable} ${cinzel.variable} ${inter.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-midnight-deep text-foreground">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:border focus:border-gold focus:bg-midnight-deep focus:px-4 focus:py-2 focus:text-sm focus:text-gold-bright"
+        >
+          Skip to content
+        </a>
         {children}
       </body>
     </html>

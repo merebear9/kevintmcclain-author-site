@@ -6,12 +6,15 @@ import AboutAuthor from "@/components/AboutAuthor";
 import Praise from "@/components/Praise";
 import EmailSignup from "@/components/EmailSignup";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ScrollProgress";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
     <>
+      <ScrollProgress />
       <Nav />
-      <main>
+      <main id="main">
         <Hero />
         <AboutSeries />
         <Books />
@@ -20,6 +23,7 @@ export default function Home() {
         <EmailSignup />
       </main>
       <Footer />
+      <BackToTop />
     </>
   );
 }

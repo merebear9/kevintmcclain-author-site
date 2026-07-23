@@ -14,12 +14,36 @@ const LINKS = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeHref, setActiveHref] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.7);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = LINKS.map((link) =>
+      document.querySelector(link.href)
+    ).filter((el): el is Element => el !== null);
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible.length > 0) {
+          setActiveHref(`#${visible[0].target.id}`);
+        }
+      },
+      { rootMargin: "-40% 0px -50% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -68,7 +92,12 @@ export default function Nav() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm uppercase tracking-[0.15em] text-mist hover:text-gold-bright transition-colors"
+                aria-current={activeHref === link.href ? "true" : undefined}
+                className={`text-sm uppercase tracking-[0.15em] transition-colors ${
+                  activeHref === link.href
+                    ? "text-gold-bright"
+                    : "text-mist hover:text-gold-bright"
+                }`}
               >
                 {link.label}
               </a>
@@ -77,21 +106,30 @@ export default function Nav() {
         </ul>
       </div>
 
-      {open && (
-        <ul className="md:hidden flex flex-col items-center gap-5 bg-midnight-deep/95 backdrop-blur-md py-6 border-t border-gold/10">
+      <div
+        className={`md:hidden overflow-hidden border-t border-gold/10 bg-midnight-deep/95 backdrop-blur-md transition-[grid-template-rows] duration-300 ease-out grid ${
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr] border-t-0"
+        }`}
+      >
+        <ul className="flex flex-col items-center gap-5 overflow-hidden py-6 min-h-0">
           {LINKS.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-sm uppercase tracking-[0.15em] text-mist hover:text-gold-bright transition-colors"
+                aria-current={activeHref === link.href ? "true" : undefined}
+                className={`text-sm uppercase tracking-[0.15em] transition-colors ${
+                  activeHref === link.href
+                    ? "text-gold-bright"
+                    : "text-mist hover:text-gold-bright"
+                }`}
               >
                 {link.label}
               </a>
             </li>
           ))}
         </ul>
-      )}
+      </div>
     </nav>
   );
 }

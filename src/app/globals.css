@@ -35,6 +35,7 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: var(--gold) var(--midnight-deep);
 }
 
 body {
@@ -45,6 +46,29 @@ body {
 
 section {
   scroll-margin-top: 5rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--midnight-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bronze);
+  border: 2px solid var(--midnight-deep);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
 }
 
 ::selection {
