@@ -29,22 +29,23 @@ export default function AboutSeries() {
         <FadeIn delay={320}>
           <div className="space-y-6 text-left font-light leading-relaxed text-mist sm:text-lg">
             <p>
-              Beneath the fog that rolls off the Mississippi lies a secret
-              older than the nation itself. Three sisters of the Medici
-              line were cursed with immortality centuries ago &mdash; and
-              they have been running, hiding, and settling old scores ever
-              since.
+              In 1799, three Medici witches boarded a ship to America
+              carrying holy relics, priceless art, and powers drawn from
+              the rivers of Europe. When pirate Jean Lafitte captured
+              their vessel, he fell in love with the most powerful witch
+              alive. That love would ignite a centuries-old war between
+              ancient families, unleash a madman&apos;s plot to reshape
+              civilization, and force an unlikely alliance between a
+              small-town sheriff, a Navy SEAL, and the immortal women who
+              have been hunting the world&apos;s predators for five
+              hundred years.
             </p>
             <p>
-              Their path crosses pirates who buried more than treasure,
-              a betrayal that has festered for four hundred years, and a
-              bloodline of enemies who have never stopped hunting them.
-              What began in the courts of Renaissance Italy now converges
-              on the muddy banks of a modern American river, where the
-              past refuses to stay buried.
-            </p>
-            <p className="font-serif-display text-xl italic text-gold-bright">
-              History does not forget. And neither do they.
+              From the fog-shrouded Mississippi River to the temples of
+              the Nile, from a supervillain&apos;s Galapagos fortress to a
+              final showdown in the piazzas of Venice, The River Witches
+              trilogy is a sweeping saga of magic, betrayal, and the
+              lengths we go to protect the ones we love.
             </p>
           </div>
         </FadeIn>

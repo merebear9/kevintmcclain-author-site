@@ -11,6 +11,8 @@
   --gold-bright: #e8cd8f;
   --bronze: #9c7a3f;
   --mist: #7d93a8;
+  --blood: #8b1a1a;
+  --blood-bright: #a82424;
 }
 
 @theme inline {
@@ -24,6 +26,8 @@
   --color-gold-bright: var(--gold-bright);
   --color-bronze: var(--bronze);
   --color-mist: var(--mist);
+  --color-blood: var(--blood);
+  --color-blood-bright: var(--blood-bright);
   --font-serif: var(--font-playfair);
   --font-deco: var(--font-cinzel);
   --font-sans: var(--font-sans-body);

@@ -17,7 +17,7 @@ const BOOKS: Book[] = [
     title: "Mississippi Magic",
     subtitle: "The River Witches, Book One",
     blurb:
-      "Three Medici sisters wash ashore in a river town that doesn't know it's already been chosen. Old magic wakes. Old enemies notice.",
+      "A deputy dies clutching a doll with its eyes sewn shut. A knife older than Rome surfaces in the Mississippi mud. And Sheriff Brent Jones is about to discover that the blonde woman who just arrived in his small Illinois river town is not what she seems. Anna Catherine Medici has been alive for over two hundred years — and she has just set in motion a chain of events that will bring a former CIA assassin to his knees.",
     amazonUrl: "https://www.amazon.com/dp/B09S87M5Y9",
     cover: "/covers/mississippi-magic.png",
     status: "available",
@@ -26,7 +26,7 @@ const BOOKS: Book[] = [
     title: "Operation Seahorse",
     subtitle: "The River Witches, Book Two",
     blurb:
-      "A buried pirate conspiracy resurfaces, and the sisters are pulled into a modern operation that could unravel four centuries of careful hiding.",
+      "An ancient enemy has escaped her prison. A tech genius is using the world's most powerful supercomputer to engineer the extinction of two billion people. And Anna Medici has been captured. The war between the Medici and Pazzi families, dormant for centuries, erupts in a climactic battle in the piazzas of Venice where stone lions take flight and an archangel answers a witch's prayer.",
     amazonUrl: "https://www.amazon.com/dp/B0B7F9TGCT",
     cover: "/covers/operation-seahorse.png",
     status: "available",
@@ -35,7 +35,7 @@ const BOOKS: Book[] = [
     title: "Book Three",
     subtitle: "The River Witches, Book Three",
     blurb:
-      "The trilogy's reckoning. Every betrayal, every secret, every century of running comes due on the banks of the Mississippi.",
+      "Casey Face is alive. Lothar Face has a grandson. And the war is far from over.",
     status: "comingSoon",
   },
 ];

@@ -62,12 +62,13 @@ export default function Hero() {
         </FadeIn>
         <FadeIn delay={400}>
           <p className="max-w-2xl font-serif-display text-xl italic text-mist sm:text-2xl">
-            Where History, Magic, and Danger Collide.
+            Three immortal witches. A pirate&apos;s betrayal. A centuries-old
+            war that will reshape the world.
           </p>
         </FadeIn>
         <FadeIn delay={600}>
           <a
-            href="#series"
+            href="#books"
             className="mt-12 inline-flex items-center gap-3 border border-gold/60 px-8 py-4 text-sm uppercase tracking-[0.25em] text-gold-bright transition-all duration-300 hover:border-gold hover:bg-gold/10 hover:tracking-[0.3em]"
           >
             Discover the Series

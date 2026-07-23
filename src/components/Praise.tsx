@@ -10,17 +10,15 @@ type Quote = {
 const QUOTES: Quote[] = [
   {
     quote:
-      "A rich, atmospheric blend of history and dark magic that pulls you under from the first page.",
-    source: "Advance Reader",
+      "A blockbuster saga that blends historical fiction, supernatural thrills, and espionage into something entirely its own.",
+    source: "Reader Review",
   },
   {
-    quote:
-      "McClain writes the Mississippi like it's a character all its own — moody, dangerous, and alive.",
-    source: "Early Reviewer",
+    quote: "Lothar Face is one of the most compelling villains I've read in years.",
+    source: "Reader Review",
   },
   {
-    quote:
-      "Part historical thriller, part supernatural reckoning. I could not put it down.",
+    quote: "The Venice battle sequence is worth the price of admission alone.",
     source: "Reader Review",
   },
 ];
@@ -41,7 +39,7 @@ export default function Praise() {
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {QUOTES.map((q, i) => (
-            <FadeIn key={q.source} delay={i * 150}>
+            <FadeIn key={q.quote} delay={i * 150}>
               <figure className="deco-frame flex h-full flex-col bg-midnight-deep/60 p-8">
                 <span className="font-serif-display text-5xl leading-none text-gold/40">
                   &ldquo;

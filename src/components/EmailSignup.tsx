@@ -34,7 +34,8 @@ export default function EmailSignup() {
           <p className="mx-auto mt-6 max-w-xl font-light leading-relaxed text-mist sm:text-lg">
             Be the first to know when Book Three drops. Get exclusive
             behind-the-scenes content about the real history behind the
-            series &mdash; straight to your inbox.
+            Medici dynasty, Jean Lafitte, and the Mississippi River settings
+            that inspired the series.
           </p>
         </FadeIn>
 
@@ -70,7 +71,7 @@ export default function EmailSignup() {
 
             <button
               type="submit"
-              className="inline-flex items-center justify-center whitespace-nowrap border border-gold px-8 py-4 text-xs uppercase tracking-[0.25em] text-gold-bright transition-all duration-300 hover:bg-gold/10 hover:tracking-[0.3em]"
+              className="inline-flex items-center justify-center whitespace-nowrap border border-blood bg-blood px-8 py-4 text-xs uppercase tracking-[0.25em] text-gold-bright transition-all duration-300 hover:border-blood-bright hover:bg-blood-bright hover:tracking-[0.3em]"
             >
               Subscribe
             </button>

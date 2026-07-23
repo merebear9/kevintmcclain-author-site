@@ -38,6 +38,7 @@ export const metadata: Metadata = {
     "River Witches",
     "The River Witches trilogy",
     "paranormal thriller",
+    "supernatural thriller",
     "historical fantasy",
     "Mississippi Magic",
     "Operation Seahorse",

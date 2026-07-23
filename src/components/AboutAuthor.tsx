@@ -1,3 +1,4 @@
+import Image from "next/image";
 import FadeIn from "./FadeIn";
 import MoonMark from "./MoonMark";
 
@@ -6,29 +7,15 @@ export default function AboutAuthor() {
     <section id="author" className="relative bg-midnight py-28 sm:py-36">
       <div className="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[minmax(0,340px)_1fr] lg:items-center">
         <FadeIn className="mx-auto w-full max-w-xs lg:mx-0">
-          {/*
-            Placeholder author photo. Replace this block with a real
-            <Image src="/author-photo.jpg" .../> once a portrait is available.
-          */}
-          <div className="deco-frame relative aspect-[4/5] w-full overflow-hidden bg-[linear-gradient(160deg,#132a33_0%,#0a1220_60%,#030510_100%)]">
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.2"
-                className="text-gold/50"
-              >
-                <circle cx="12" cy="8" r="4" />
-                <path d="M4 20c0-3.9 3.6-7 8-7s8 3.1 8 7" strokeLinecap="round" />
-              </svg>
-              <p className="text-xs uppercase tracking-[0.25em] text-mist/70">
-                Author Photo Placeholder
-              </p>
-            </div>
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(201,168,106,0.08)_0%,transparent_65%)]" />
+          <div className="deco-frame relative aspect-[4/5] w-full overflow-hidden bg-midnight-deep">
+            <Image
+              src="/author-photo.jpg"
+              alt="Kevin T. McClain"
+              fill
+              sizes="(max-width: 1024px) 320px, 340px"
+              className="object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(201,168,106,0.12)_0%,transparent_65%)]" />
           </div>
         </FadeIn>
 
@@ -59,13 +46,11 @@ export default function AboutAuthor() {
                 Emergency Management.
               </p>
               <p>
-                A world traveler who drew on his life experiences for his
-                fiction, he brings legal and investigative expertise to the
-                thriller elements of his writing.
-              </p>
-              <p>
-                He is a family man who raised four children, all graduates of
-                the University of Notre Dame.
+                A world traveler who drew on his life experiences to craft
+                the international settings of the trilogy, he brings legal
+                and investigative authenticity to the thriller elements of
+                the series. He lives near Quincy, Illinois &mdash; the
+                real-life setting of the books &mdash; with his wife Linda.
               </p>
             </div>
           </FadeIn>
