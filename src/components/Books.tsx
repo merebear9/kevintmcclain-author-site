@@ -19,7 +19,7 @@ const BOOKS: Book[] = [
     blurb:
       "Three Medici sisters wash ashore in a river town that doesn't know it's already been chosen. Old magic wakes. Old enemies notice.",
     amazonUrl: "https://www.amazon.com/dp/B09S87M5Y9",
-    cover: "/covers/mississippi-magic.jpeg",
+    cover: "/covers/mississippi-magic.png",
     status: "available",
   },
   {
@@ -28,7 +28,7 @@ const BOOKS: Book[] = [
     blurb:
       "A buried pirate conspiracy resurfaces, and the sisters are pulled into a modern operation that could unravel four centuries of careful hiding.",
     amazonUrl: "https://www.amazon.com/dp/B0B7F9TGCT",
-    cover: "/covers/operation-seahorse.jpeg",
+    cover: "/covers/operation-seahorse.png",
     status: "available",
   },
   {
@@ -43,16 +43,14 @@ const BOOKS: Book[] = [
 function BookCover({ book }: { book: Book }) {
   if (book.cover) {
     return (
-      <div className="deco-frame relative flex aspect-[2/3] w-full items-center justify-center bg-midnight-deep p-6">
-        <div className="relative h-full w-full max-w-[190px]">
-          <Image
-            src={book.cover}
-            alt={`${book.title} cover`}
-            fill
-            sizes="(max-width: 640px) 60vw, 220px"
-            className="object-contain drop-shadow-[0_18px_30px_rgba(0,0,0,0.55)]"
-          />
-        </div>
+      <div className="relative aspect-[13/20] w-full overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
+        <Image
+          src={book.cover}
+          alt={`${book.title} cover`}
+          fill
+          sizes="(max-width: 640px) 90vw, 360px"
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        />
       </div>
     );
   }
